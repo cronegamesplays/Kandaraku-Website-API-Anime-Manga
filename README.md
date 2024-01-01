@@ -24,4 +24,4 @@ Seja um colaborador para nos ajudar com o desenvolvimento do site oficial do Kan
 - Nazuna (@nazuna)
 
 
-Copyright Kandaraku Studios 2020 - 2023
+Copyright © Kandaraku Studios 2020 - 2024
