@@ -1,16 +1,16 @@
 # Kandaraku-API-Streaming-Anime-Manga-Website
 
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/1169383746106032298/1179593429123076116/1.png?ex=659f42fd&is=658ccdfd&hm=9638f4ce7a64320ed9cb61d4d1364c8c862fd863af34f6b710888dcb0cdea2cf&" width="600px" alt="stats" align="center">
+  <img src="https://cdn.discordapp.com/attachments/1169383746106032298/1179593429123076116/1.png?ex=660e00fd&is=65fb8bfd&hm=ae2befc28f58446842a3910374a766afc2cb6911d7a3e335c0eb0680501cd756&" width="600px" alt="stats" align="center">
 </p>
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/1169383746106032298/1179593481551880212/2.png?ex=659f4309&is=658cce09&hm=daf8c57842374c603d60b896685d4bcc40d18fd6a9c18b460908eea24e40e47a&" width="600px" alt="stats" align="center">
+  <img src="https://cdn.discordapp.com/attachments/1169383746106032298/1179593481551880212/2.png?ex=660e0109&is=65fb8c09&hm=43c8cf0c7087e6a6d5520d86763aa16ed96c33c23aa619964e0fdaead5840fae&" width="600px" alt="stats" align="center">
 </p>
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/1169383746106032298/1179593521401966652/3.png?ex=659f4313&is=658cce13&hm=f93f81612f86441bbb1b010b1ddca8aaf9fc2e3821744c22daf7fb00065f9564&" width="600px" alt="stats" align="center">
+  <img src="https://cdn.discordapp.com/attachments/1169383746106032298/1179593521401966652/3.png?ex=660e0113&is=65fb8c13&hm=ce116be05d812a5124af157322bb59dd8a47380d789671d1b82b3857cddf4c8f&" width="600px" alt="stats" align="center">
 </p>
 <p align="center">
-  <img src="https://media.discordapp.net/attachments/1169383746106032298/1179593554297892926/4.png?ex=659f431b&is=658cce1b&hm=87b8edc2212ade8b9bd872963ee5368362b67b82eee46bfd4ed0281b65d99574&" width="600px" alt="stats" align="center">
+  <img src="https://cdn.discordapp.com/attachments/1169383746106032298/1179593554297892926/4.png?ex=660e011b&is=65fb8c1b&hm=18cb58c633894f302b8c10d6abe61aa2863772e11725e270dd70bdded8355402&" width="600px" alt="stats" align="center">
 </p>
 
 Projeto desenvolvido de um site para streaming de animes online e mangas online gratuito. Site baseado na Kandaraku API. Criado por CroneGamesPlays. Muito obrigado aos colaboradores do projeto, que ajudaram no desenvolvimento do site.
