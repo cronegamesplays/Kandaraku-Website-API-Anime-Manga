@@ -11,7 +11,7 @@ export const useControllerStore = defineStore('controller', () => {
     awaitSearch = true
     setTimeout(() => {
       awaitSearch = false              
-    }, 700);
+    }, 500);
 
   }
 

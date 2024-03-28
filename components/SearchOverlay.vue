@@ -18,7 +18,7 @@
         <NuxtImg 
             v-if="controller.showSearch"
             class="character"
-            src="/look.png"
+            src="/lookmin.webp"
             width="540px"
             height="540px"
             fit="inside"
@@ -51,7 +51,9 @@
     }
 
     //Transição Personagem
-    .character-enter-active,
+    .character-enter-active {
+        transition: all 0.8s ease-in-out;
+    }
     .character-leave-active {
         transition: all 0.4s ease;
     }
