@@ -35,7 +35,7 @@
         letter-spacing: 2px;
         margin: 14px;
         margin-left: 24px;
-        transform: translateY(-3px);
+        transform: translateY(-2px);
     }
 
     .router-link-exact-active {

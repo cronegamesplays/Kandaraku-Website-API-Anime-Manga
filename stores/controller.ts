@@ -1,23 +1,29 @@
 export const useControllerStore = defineStore('controller', () => {
-    //Valores Privados
-    const states = ref({
-      //z - index 9999
-      showSearch:false,
-      test: false
-    })
+  const showSearch = ref(false)
+  let awaitSearch = false
 
-    //Getters
-    
-    //Actions
-    function alternateSearch() {
-      states.value.showSearch = !states.value.showSearch
-    }
-
-    function clear() {
-      if(states.value.showSearch === true) {states.value.showSearch = false; return}
-      if(states.value.test === true) {states.value.test = false; return}
-    }
-
+  //Getters
   
-    return { states, alternateSearch, clear }
-  })
+  //Actions
+  function alternateSearch() {
+    if(awaitSearch)return
+    showSearch.value = !showSearch.value
+    awaitSearch = true
+    setTimeout(() => {
+      awaitSearch = false              
+    }, 500);
+
+  }
+
+  function clear() {
+    // z-index 9050
+    if(showSearch.value === true) {showSearch.value = false; return}
+  }
+
+
+  return { 
+    showSearch,
+    alternateSearch,
+    clear,
+  }
+})
