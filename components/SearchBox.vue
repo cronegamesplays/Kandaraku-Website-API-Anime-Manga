@@ -10,7 +10,7 @@
 
 <template>
     <div class="search-box">
-        <input id="searchInput" type="text" placeholder="Search">
+        <input id="searchInput" type="text" placeholder="Pesquisar...">
     </div>
 </template>
 

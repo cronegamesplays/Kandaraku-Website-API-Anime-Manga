@@ -5,7 +5,7 @@
 <template>
     <header>
         <nav>
-            <NuxtLink class="page-title" to="/">KANDARAKU!</NuxtLink>
+            <NuxtLink class="page-title" to="/">Kandaraku</NuxtLink>
             <ul>
                 <li><NuxtLink to="/animes">Animes</NuxtLink></li>
                 <li><NuxtLink to="/mangas">Mangas</NuxtLink></li>
