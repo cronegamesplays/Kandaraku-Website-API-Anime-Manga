@@ -4,23 +4,24 @@
 
 <template>
     
-    <div class="interaction-detector" v-if="controller.states.showSearch" @click="controller.alternateSearch()" />
+    <div class="interaction-detector" v-if="controller.showSearch" @click="controller.alternateSearch()" />
     
     <Transition>
-        <BackgroundOverlay v-if="controller.states.showSearch" />
+        <BackgroundOverlay v-if="controller.showSearch" />
     </Transition>
 
     <Transition name="s-box">
-        <SearchBox v-if="controller.states.showSearch" />
+        <SearchBox v-if="controller.showSearch" />
     </Transition>
 
     <Transition name="character">
         <NuxtImg 
-            v-if="controller.states.showSearch"
+            v-if="controller.showSearch"
             class="character"
             src="/look.png"
-            width="400px"
-            height="400px"
+            width="540px"
+            height="540px"
+            fit="inside"
         />
     </Transition>
     
