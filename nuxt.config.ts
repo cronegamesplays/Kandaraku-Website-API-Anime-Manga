@@ -1,18 +1,20 @@
+// Importação correta de defineNuxtConfig
 import { defineNuxtConfig } from '@nuxt/config';
 
 export default defineNuxtConfig({
   head: {
     titleTemplate: '%s - Kandaraku',
     title: 'Kandaraku',
-    devtools: { enabled: true },
-    modules: ["nuxt-icon", "@nuxt/image", "@pinia/nuxt"],
-    css: [
-      '~/global.css'
-    ],
-  }
-);
+  },
+  // Devtools, modules e css devem ser definidos fora do objeto 'head'
+  devtools: { enabled: true },
+  modules: ["nuxt-icon", "@nuxt/image", "@pinia/nuxt"],
+  css: [
+    '~/global.css'
+  ],
+})
 
-import { defineComponent } from '@nuxtjs/composition-api';
+/*import { defineComponent } from '@nuxtjs/composition-api';
 
 export default defineComponent({
   head() {
@@ -31,4 +33,4 @@ export default defineComponent({
       ]
     };
   }
-})
+})*/
