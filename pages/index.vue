@@ -14,6 +14,6 @@
     /* Adiciona um fundo preto semi-transparente */
     background-color: rgba(0, 0, 0, 0.5);
     /* Aplica um filtro de desfoque */
-    filter: blur(5px);
+    filter: blur(3px);
 }
 </style>

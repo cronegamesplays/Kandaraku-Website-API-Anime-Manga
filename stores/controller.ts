@@ -1,4 +1,3 @@
-
 export const useControllerStore = defineStore('controller', () => {
   const showSearch = ref(false)
   let awaitSearch = false
