@@ -67,7 +67,7 @@ input, button, textarea, select{
 }
 
 body, html{
-    height: 100%; /* Makes the body element full screen */
+    height: 3500px; /* Makes the body element full screen */
     scroll-behavior: smooth; /* Makes normal scrolling smooth */
     background-color: #1b1629;
 }
@@ -96,3 +96,28 @@ a, ul {
           -ms-user-select: text; /* Internet Explorer/Edge */
               user-select: text; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
   }
+
+  .remove-scrolling { 
+    height: 100% !important; 
+    overflow: hidden !important; 
+} 
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #140a20; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1b0c3e; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2a1043; 
+}

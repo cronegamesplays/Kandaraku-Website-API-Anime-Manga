@@ -3,7 +3,7 @@
         created(){
             setTimeout(() => {
                 document.getElementById("searchInput").focus()
-            }, 120);
+            }, 50);
         },
     }
 </script>

@@ -15,11 +15,11 @@
                 controller.clear();
             }
         });
-
     }
+
 </script>
 
 <template>
     <div>
     </div>
-</template>~/stores/controller
+</template>
