@@ -11,7 +11,7 @@
             {
                 rel: "preload",
                 as: "image",
-                href: "https://i.imgur.com/L0IWQgS.jpeg"
+                href: "https://iili.io/JjOFKg4.jpg"
             }
         ]
     })
