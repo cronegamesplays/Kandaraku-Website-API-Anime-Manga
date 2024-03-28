@@ -18,7 +18,7 @@
                     <Icon name="ion:search" size="24px" />
                     <span>Ctrl + K</span>
                 </button>
-                <NuxtImg src="/perfil.jpg" width="45px" height="45px"/>
+                <NuxtImg src="/profile.png" width="45px" height="45px"/>
                 <Icon name="ion:menu" size="32px" color="white" />
             </div>
         </nav>
