@@ -4,8 +4,8 @@
         <div class="banner">
             <img src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg" alt="Banner" class="banner-image" />
             <div class="banner-content">
-                <h1 style="font-family: 'Open Sans', sans-serif; font-size: 2rem;">Título do Banner</h1>
-                <p style="font-family: 'Open Sans', sans-serif; font-size: 1rem;">Descrição do Banner por cima da imagem</p>
+                <h1 style="font-family: 'Open Sans', sans-serif; font-size: 2rem;">Solo Leveling</h1>
+                <p style="font-family: 'Open Sans', sans-serif; font-size: 1rem;">Descrição do anime</p>
             </div>
         </div>
     </div>
