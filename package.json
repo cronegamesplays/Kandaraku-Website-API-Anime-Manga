@@ -4,8 +4,8 @@
   "type": "module",
   "main": ".output/server/index.mjs",
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
+    "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -13,7 +13,6 @@
   "dependencies": {
     "@nuxt/image": "^1.4.0",
     "@pinia/nuxt": "^0.5.1",
-    "nuxt": "^3.11.1",
     "pinia": "^2.1.7",
     "sass": "^1.72.0",
     "vue": "^3.4.21",
