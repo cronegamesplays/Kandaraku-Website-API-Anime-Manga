@@ -4,23 +4,24 @@
 
 <template>
     <div class="wallpaper-container">
-      <NuxtImg class="wallpaper" src="https://iili.io/JjOFKg4.jpg" />
-      <div class="banner">
-        <img src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg" alt="Banner" class="banner-image" />
-        <div class="banner-content">
-          <h1 class="banner-title">Solo Leveling</h1>
-          <p class="banner-description">Descrição do anime</p>
-        </div>
-        <button class="watch-now-button">
-            <font-awesome-icon icon="play-circle" />
-            Assistir Agora
-        </button>
-      </div>
+  <NuxtImg class="wallpaper" src="https://iili.io/JjOFKg4.jpg" />
+  <div class="banner">
+    <img src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg" alt="Banner" class="banner-image" />
+    <div class="banner-content">
+      <h1 class="banner-title">Solo Leveling</h1>
+      <p class="banner-description">Descrição do anime.</p>
     </div>
+    <button class="watch-now-button">
+      <div>
+        <img src="./../assets/icons/circle-play-solid.svg" class="play-icon" width="40px" height="40px" color= "white">
+        Assistir Agora
+      </div>
+    </button>
+  </div>
+</div>
   </template>
   
   <style lang="scss" scoped>
-  // Importe a fonte Open Sans em negrito
   @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
   
   .wallpaper-container {
@@ -36,7 +37,7 @@
   .banner {
     position: absolute;
     top: 50px;
-    left: 50px; /* Alterado para 50px */
+    left: 50px;
     width: 95%;
     height: 500px;
     border-radius: 40px;
@@ -53,8 +54,8 @@
   .banner-content {
     position: absolute;
     top: 65%;
-    left: 20px; /* Alterado para 20px */
-    transform: translateY(-50%); /* Alterado para translateY */
+    left: 20px;
+    transform: translateY(-50%);
     color: white;
     z-index: 1000;
   }
@@ -68,12 +69,14 @@
   .banner-description {
     font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
   .watch-now-button {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 30px;
     width: 250px;
     height: 60px;
     background-color: #5E17EB;
@@ -84,6 +87,6 @@
     font-size: 1.2rem;
     cursor: pointer;
     font-family: 'Open Sans', sans-serif;
-    font-weight: bold; /* Aplica a fonte Open Sans em negrito */
+    font-weight: bold;
   }
   </style>

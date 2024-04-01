@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.4.0",
+    "@nuxt/ui": "^2.15.0",
     "@pinia/nuxt": "^0.5.1",
     "pinia": "^2.1.7",
     "sass": "^1.72.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.1.5",
+    "@nuxtjs/tailwindcss": "^6.11.4",
     "nuxt-icon": "^0.6.10"
   }
 }
