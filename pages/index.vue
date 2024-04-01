@@ -2,8 +2,9 @@
 
 useHead({
   title: "Página Inicial",
-  titleTemplate: "%s - Kandaraku v1-a",
+  titleTemplate: "%s ⮞ Kandaraku v1-a",
   meta: [
+    // Description
     { name: "description", content: "Assista seus animes online gratuitamente ou acesse o banco de dados de diversos animes disponiveis pelo Kandaraku API" },
     // General SEO
     { property: "og:title", content: "Assista seus animes online gratuitamente ou acesse o banco de dados de diversos animes disponiveis pelo Kandaraku API" },
