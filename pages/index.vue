@@ -1,4 +1,14 @@
-<script>
+<script setup>
+
+useHead({
+  title: "Página Inicial",
+  titleTemplate: "%s - Kandaraku v1-a",
+  meta: [
+    { name: "description", content: "Assista seus animes online gratuitamente ou acesse o banco de dados de diversos animes disponiveis pelo Kandaraku API" },
+    // General SEO
+    { property: "og:title", content: "Assista seus animes online gratuitamente ou acesse o banco de dados de diversos animes disponiveis pelo Kandaraku API" },
+  ],
+})
 
 </script>
 
@@ -6,14 +16,14 @@
     <div class="wallpaper-container">
   <NuxtImg class="wallpaper" src="https://iili.io/JjOFKg4.jpg" />
   <div class="banner">
-    <img src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg" alt="Banner" class="banner-image" />
+    <NuxtImg src="https://s4.anilist.co/file/anilistcdn/media/anime/banner/151807-37yfQA3ym8PA.jpg" alt="Banner" class="banner-image" />
     <div class="banner-content">
       <h1 class="banner-title">Solo Leveling</h1>
       <p class="banner-description">Descrição do anime.</p>
     </div>
     <button class="watch-now-button">
       <div>
-        <img src="./../assets/icons/circle-play-solid.svg" class="play-icon" width="40px" height="40px" color= "white">
+        <img src="" class="play-icon" width="40px" height="40px" color= "white">
         Assistir Agora
       </div>
     </button>

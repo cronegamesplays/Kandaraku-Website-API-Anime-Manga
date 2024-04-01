@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["nuxt-icon", "@nuxt/image", "@pinia/nuxt", "@nuxtjs/tailwindcss", "@nuxt/ui"],
+  modules: ["nuxt-icon", "@nuxt/image", "@pinia/nuxt", "@nuxt/ui", "@vite-pwa/nuxt"],
   /*router: {
     middleware: ["auth"],
   },
