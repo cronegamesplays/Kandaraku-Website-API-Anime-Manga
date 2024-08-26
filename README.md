@@ -1,16 +1,16 @@
 # Kandaraku-API-Streaming-Anime-Manga-Website
 
 <p align="center">
-  <img src="https://github.com/CroneGamesPlays/Kandaraku-API-Streaming-Anime-Manga-Website/assets/77684277/6d9e968f-b153-4241-baa7-fc0f946a99ce" width="600px" alt="stats" align="center">
+  <img src="https://github.com/user-attachments/assets/5a6b77bb-2a35-406e-9328-f192fe63826d" width="600px" alt="stats" align="center">
 </p>
 <p align="center">
-  <img src="https://github.com/CroneGamesPlays/Kandaraku-API-Streaming-Anime-Manga-Website/assets/77684277/bced2252-2254-4918-b924-41a2df3ec685" width="600px" alt="stats" align="center">
+  <img src="https://github.com/user-attachments/assets/6753208d-43ae-49ca-a80d-0bbbfefb80fc" width="600px" alt="stats" align="center">
 </p>
 <p align="center">
-  <img src="https://github.com/CroneGamesPlays/Kandaraku-API-Streaming-Anime-Manga-Website/assets/77684277/2b3206fa-9eb0-4853-95e3-3b215f7fda80" width="600px" alt="stats" align="center">
+  <img src="https://github.com/user-attachments/assets/519f2ba2-a95b-468a-8cae-7a21155b39a2" width="600px" alt="stats" align="center">
 </p>
 <p align="center">
-  <img src="https://github.com/CroneGamesPlays/Kandaraku-API-Streaming-Anime-Manga-Website/assets/77684277/c3082191-a5bf-406d-bf63-fbbccd5daa62" width="600px" alt="stats" align="center">
+  <img src="https://github.com/user-attachments/assets/59592ad6-621f-4811-a3fd-0da48a8066f4" width="600px" alt="stats" align="center">
 </p>
 
 Projeto desenvolvido de um site para streaming de animes online e mangas online gratuito. Site baseado na Kandaraku API. Criado por CroneGamesPlays. Muito obrigado aos colaboradores do projeto, que ajudaram no desenvolvimento do site.
