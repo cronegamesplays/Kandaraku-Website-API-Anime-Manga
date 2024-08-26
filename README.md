@@ -21,6 +21,6 @@ Seja um colaborador para nos ajudar com o desenvolvimento do site oficial do Kan
 - CroneGamesPlays (@cronegamesplays)
 
 ### Créditos dos Editores (Colaboradores)
-- Danne (@nyantise)
+Nenhum :(
 
 Copyright © Kandaraku Studios 2020 - 2024
