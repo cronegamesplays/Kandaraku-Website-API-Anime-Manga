@@ -3,8 +3,8 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: "http",
-        hostname: "simolex.com",
+        protocol: "https",
+        hostname: "wallpaperaccess.com",
       },
     ],
   },
