@@ -11,7 +11,7 @@ export default function PagesLayout({
   return (
     <>
       <div className="flex flex-col flex-grow h-screen">
-        <header className="bg-zinc-900">
+        <header className="bg-zinc-900 z-50 sticky top-0 shadow-lg">
           <div className="container mx-auto py-2 px-5 flex items-center justify-between relative">
             <LocalHeader />
           </div>
@@ -52,7 +52,7 @@ function LocalHeader() {
 
         <input id="isSearchOpen" className="peer hidden" type="checkbox" />
 
-        <div className="peer-checked:block hidden sm:block sm:static absolute top-full -mt-1 start-0 w-full bg-zinc-900 p-3 rounded-b-md sm:m-0 sm:p-0 sm:min-w-52">
+        <div className="shadow-lg sm:shadow-none peer-checked:block hidden sm:block sm:static absolute top-full -mt-1 start-0 w-full bg-zinc-900 p-3 rounded-b-md sm:m-0 sm:p-0 sm:min-w-52">
           <form className="rounded-md border border-input bg-background/30 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium flex items-center gap-2 w-full">
             <label htmlFor="search">
               <Search className="size-4" />
