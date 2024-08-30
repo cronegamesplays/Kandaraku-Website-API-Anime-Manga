@@ -39,8 +39,8 @@ function LocalHeader() {
   return (
     <>
       <Link href="/" className="group text-2xl font-black md:text-3xl text-purple-500 hover:scale-105 transition-transform ease-linear duration-75 *:transition-colors">
-        <h1 className="group-hover:text-purple-700">
-          K<span className="text-purple-700 group-hover:text-purple-500">an</span>daraku
+        <h1>
+          Kandaraku
         </h1>
       </Link>
 
@@ -52,7 +52,7 @@ function LocalHeader() {
 
         <input id="isSearchOpen" className="peer hidden" type="checkbox" />
 
-        <div className="shadow-lg sm:shadow-none peer-checked:block hidden sm:block sm:static absolute top-full -mt-1 start-0 w-full bg-zinc-900 p-3 rounded-b-md sm:m-0 sm:p-0 sm:min-w-52">
+        <div className="shadow-lg sm:shadow-none peer-checked:block hidden sm:block sm:static absolute top-full -mt-1 start-0 w-full bg-zinc-900 p-3 rounded-b-md sm:m-0 sm:p-0 sm:min-w-[45ch]">
           <form className="rounded-md border border-input bg-background/30 px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium flex items-center gap-2 w-full">
             <label htmlFor="search">
               <Search className="size-4" />

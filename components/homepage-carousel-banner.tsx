@@ -32,7 +32,7 @@ export default function HomepageAnimeBanner(props: {
         backgroundSize: "cover",
         backgroundPosition: "right",
         backgroundRepeat: "no-repeat",
-      }} className="rounded-sm overflow-hidden">
+      }} className="rounded-3xl overflow-hidden">
         <CardContent className="h-[85vh] min-h-[360px] max-h-[520px] min-w-32 flex flex-col justify-end p-4 md:p-8 lg:p-12">
           <div className="mb-4">
             <Link href={props.authorProfileLink} className="flex flex-nowrap gap-x-2 items-center text-sm mb-3">
