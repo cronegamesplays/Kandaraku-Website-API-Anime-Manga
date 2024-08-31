@@ -81,8 +81,8 @@ function LocalFooter() {
     <>
       <div className="prose prose-sm prose-zinc prose-invert w-full">
         <h2>Kandaraku</h2>
-        <p>Uma plataforma da cumunidade para assistir seus animes online.</p>
-        <small>Kandaraku Website &amp; Kandaraku API Project criado pelo: <a href="https://github.com/CroneGamesPlays" target="_blank">&#64;CronesGamesPlays</a></small>
+        <p>Uma plataforma da comunidade para acessar informações dos seus animes favoritos, você pode adicionar, editar e publicar.</p>
+        <small>Kandaraku Website Project &amp; Kandaraku API Project criado pelo: <a href="https://github.com/cronegamesplays" target="_blank">&#64;CronesGamesPlays</a></small>
         <div className="no-prose mt-8 flex gap-3 flex-wrap">
           <a href="https://discord.gg/wV2WamExr5" target="_blank">
             <Button variant="outline" className="inline-flex items-center gap-2 px-3">
