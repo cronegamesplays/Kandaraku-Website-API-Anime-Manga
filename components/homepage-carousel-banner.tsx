@@ -1,5 +1,6 @@
 import { Button } from "@/ui/button";
 import { Card, CardContent } from "@/ui/card";
+import { formatBannerDate, formatInitials, formatMilliseconds, formatShortNumber } from "@/utils/format";
 import { Calendar, ChartColumn, Clock, Eye, Mic, Play, StarIcon, Subtitles, ThumbsUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,7 @@ export default function HomepageAnimeBanner(props: {
   rank: number;
   rate: number;
 }) {
-  const convertedDuration = convertMilliseconds(props.animeEpisodeDuration);
+  const formatedDuration = formatMilliseconds(props.animeEpisodeDuration);
 
   return (
     <>
@@ -45,7 +46,7 @@ export default function HomepageAnimeBanner(props: {
                     src={props.authorImageLink}
                   /> :
                   <span className="scale-75">
-                    {getInitials(props.authorName)}
+                    {formatInitials(props.authorName)}
                   </span>
                 }
               </div>
@@ -57,11 +58,11 @@ export default function HomepageAnimeBanner(props: {
             <div className="flex gap-3.5 flex-wrap mb-3">
               <span className="flex gap-1 items-center text-sm">
                 <Clock className="size-4" /> {
-                  convertedDuration.hours ?
-                    `${convertedDuration.hours}h` :
-                    convertedDuration.minutes ?
-                      `${convertedDuration.minutes}m` :
-                      `${convertedDuration.seconds}s`
+                  formatedDuration.hours ?
+                    `${formatedDuration.hours}h` :
+                    formatedDuration.minutes ?
+                      `${formatedDuration.minutes}m` :
+                      `${formatedDuration.seconds}s`
                 }
               </span>
               <span className="flex gap-1 items-center text-sm">
@@ -105,57 +106,4 @@ export default function HomepageAnimeBanner(props: {
       </Card >
     </>
   );
-}
-
-function getInitials(name: string): string {
-  const names = name.trim().split(/\s+/);
-  if (names.length === 1) {
-    return names[0].slice(0, 2);
-  }
-
-  const firstInitial = names[0][0].toUpperCase();
-  const lastInitial = names[names.length - 1][0].toUpperCase();
-
-  return `${firstInitial}${lastInitial}`;
-}
-
-function formatShortNumber(num: number): string {
-  const units = ["", "K", "M", "B", "T"];
-  const magnitude = Math.floor(Math.log10(Math.abs(num)) / 3);
-
-  if (magnitude === 0) {
-    return num.toString();
-  }
-
-  const shortened = num / Math.pow(10, magnitude * 3);
-  return `${shortened.toFixed(1).replace(/\.0$/, "")}${units[magnitude]}`;
-}
-
-function convertMilliseconds(ms: number): {
-  hours: number;
-  minutes: number;
-  seconds: number;
-} {
-  const totalSeconds = Math.floor(ms / 1000);
-  const hours = Math.floor(totalSeconds / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
-
-  return {
-    hours,
-    minutes,
-    seconds,
-  };
-}
-
-function formatBannerDate(date: Date): string {
-  const year = date.getFullYear();
-  const months = [
-    "Jan.", "Feb.", "Mar.", "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.",
-    "Oct.", "Nov.", "Dec.",
-  ];
-  const month = months[date.getMonth()];
-  const day = date.getDate();
-
-  return `${year} ${month} ${day}`;
 }
