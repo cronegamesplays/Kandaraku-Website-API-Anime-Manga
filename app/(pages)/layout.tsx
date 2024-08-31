@@ -90,7 +90,7 @@ function LocalFooter() {
               Nosso servidor
             </Button>
           </a>
-          <a href="https://github.com/cronegamesplays/Kandaraku-API-Streaming-Anime-Manga-Website?tab=readme-ov-file" target="_blank">
+          <a href="https://github.com/cronegamesplays/Kandaraku-Website-API-Anime-Manga" target="_blank">
             <Button variant="outline" className="inline-flex items-center gap-2 px-3">
               <Github className="size-5" />
               Código fonte
