@@ -54,7 +54,7 @@ export default function HomepageAnimeBanner(props: {
                 {props.authorName}
               </span>
             </Link>
-            <h2 className="text-2xl font-bold mb-3">{props.animeTitle}</h2>
+            <h3 className="text-2xl font-bold mb-3">{props.animeTitle}</h3>
             <div className="flex gap-3.5 flex-wrap mb-3">
               <span className="flex gap-1 items-center text-sm">
                 <Clock className="size-4" /> {
