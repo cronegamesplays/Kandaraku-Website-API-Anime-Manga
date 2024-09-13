@@ -67,6 +67,8 @@ function LocalHeader() {
           </form>
         </div>
 
+        {/* Botão de alterar o idioma do site - Icon Luucid React: Languages*/}
+
         {/* TODO: Esse botão precisa abrir um menu com detalhes da conta do usuário. */}
         <button className="bg-orange-500 rounded-full aspect-square size-8 border border-white grid place-items-center">
           FT
@@ -99,8 +101,10 @@ function LocalFooter() {
         </div>
       </div>
       <div className="prose prose-sm prose-zinc prose-invert w-full">
-        <h3>Parceiros:</h3>
-        <p>Nenhum por enquanto...</p>
+        <h3>Parceiros</h3>
+        <ul>
+        <li><a href="https://discord.gg/zgQzcztRXC">ADSS Cloud (Hospedagem deste site)</a></li>
+        </ul>
         <h3>Colaboradores</h3>
         <ul>
           <li><a href="https://github.com/kevinmarquesp">&#64;kevinmarquesp</a></li>
