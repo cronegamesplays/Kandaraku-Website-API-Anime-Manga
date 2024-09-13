@@ -2,7 +2,7 @@ import AnimeCard from "@/components/anime-card";
 import AnimeCarousel from "@/components/anime-carousel";
 import HomepageCarousel from "@/components/homepage-carousel";
 import SectionTitle from "@/components/section-title";
-import { PlayCircle, Tv } from "lucide-react";
+import { PlayCircle, Tv, DiamondPlus, Clapperboard } from "lucide-react";
 
 export default function Home() {
   return (
@@ -49,6 +49,50 @@ export default function Home() {
                 variant="grid"
               />
             ))}
+          </div>
+        </section>
+        <section>
+          <SectionTitle
+            title="Animes adicionados"
+            icon={<DiamondPlus className="sm:size-10" />}
+            seeMoreLink="#"
+          />
+          <div className="mt-6">
+            <AnimeCarousel
+              animeCards={Array.from({ length: 10 }).map((_, key) => (
+                <AnimeCard
+                  key={key}
+                  authorName="Yuzuma"
+                  animeTitle="Novo Anime"
+                  animeImageLink="https://cdn.noitatnemucod.net/thumbnail/300x400/100/c2197d5d02bb3b238ed3c7c15664659f.jpg"
+                  animeDubCount={5}
+                  animeSubCount={12}
+                  variant="original"
+                />
+              ))}
+            />
+          </div>
+        </section>
+        <section>
+          <SectionTitle
+            title="Filmes adicionados"
+            icon={<Clapperboard className="sm:size-10" />}
+            seeMoreLink="#"
+          />
+          <div className="mt-6">
+            <AnimeCarousel
+              animeCards={Array.from({ length: 10 }).map((_, key) => (
+                <AnimeCard
+                  key={key}
+                  authorName="Yuzuma"
+                  animeTitle="Novo Filme"
+                  animeImageLink="https://cdn.noitatnemucod.net/thumbnail/300x400/100/c2197d5d02bb3b238ed3c7c15664659f.jpg"
+                  animeDubCount={5}
+                  animeSubCount={12}
+                  variant="original"
+                />
+              ))}
+            />
           </div>
         </section>
       </div>
