@@ -67,7 +67,7 @@ function LocalHeader() {
           </form>
         </div>
 
-        {/* Botão de alterar o idioma do site - Icon Luucid React: Languages*/}
+        {/* Botão de alterar o idioma do site aqui - Icon Lucide React: Languages*/}
 
         {/* TODO: Esse botão precisa abrir um menu com detalhes da conta do usuário. */}
         <button className="bg-orange-500 rounded-full aspect-square size-8 border border-white grid place-items-center">
