@@ -1,5 +1,6 @@
 import { Button } from "@/ui/button";
-import { Command, Search } from "lucide-react";
+import { Popover, PopoverContent, PopoverTrigger } from "@/ui/popover";
+import { Command, Languages, Search } from "lucide-react";
 import Link from "next/link";
 import { Discord, Github } from "react-bootstrap-icons";
 
@@ -38,11 +39,14 @@ export default function PagesLayout({
 function LocalHeader() {
   return (
     <>
-      <Link href="/" className="group text-2xl font-black md:text-3xl text-purple-500 hover:scale-105 transition-transform ease-linear duration-75 *:transition-colors">
-        <h1>
-          Kandaraku
-        </h1>
-      </Link>
+      <div className="flex gap-4">
+        <Link href="/" className="group text-2xl font-black md:text-3xl text-purple-500 hover:scale-105 transition-transform ease-linear duration-75 *:transition-colors">
+          <h1>
+            Kandaraku
+          </h1>
+        </Link>
+
+      </div>
 
       <div className="flex items-center gap-3">
         {/* NOTE: Esse input de pesquisa é responsivo, ele usa uma checkbox invisível pra guardar o estado. */}
@@ -67,7 +71,33 @@ function LocalHeader() {
           </form>
         </div>
 
-        {/* Botão de alterar o idioma do site aqui - Icon Lucide React: Languages*/}
+        {/* NOTE: Aqui seria uma boa usar uma estrategia de parametros de pesquisa, ou coisa assim pra distinguir os idiomas. */}
+        <Popover>
+          <PopoverTrigger asChild>
+            <Button variant="secondary" size="icon" className="p-2">
+              <Languages className="size-6" />
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent className="bg-zinc-950 p-2 border rounded-lg mt-2 w-[25ch] mx-3 space-y-2">
+            <ul>
+              <li>
+                <Link href="/" className="block py-2 px-4 hover:bg-zinc-900 rounded-sm">
+                  🇧🇷 Português
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="block py-2 px-4 hover:bg-zinc-900 rounded-sm">
+                  🇪🇸 Espanhol
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="block py-2 px-4 hover:bg-zinc-900 rounded-sm">
+                  🇺🇸 Inglês
+                </Link>
+              </li>
+            </ul>
+          </PopoverContent>
+        </Popover>
 
         {/* TODO: Esse botão precisa abrir um menu com detalhes da conta do usuário. */}
         <button className="bg-orange-500 rounded-full aspect-square size-8 border border-white grid place-items-center">
@@ -103,7 +133,7 @@ function LocalFooter() {
       <div className="prose prose-sm prose-zinc prose-invert w-full">
         <h3>Parceiros</h3>
         <ul>
-        <li><a href="https://discord.gg/zgQzcztRXC">ADSS Cloud (Hospedagem deste site)</a></li>
+          <li><a href="https://discord.gg/zgQzcztRXC">ADSS Cloud (Hospedagem deste site)</a></li>
         </ul>
         <h3>Colaboradores</h3>
         <ul>
