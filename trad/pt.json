@@ -1,0 +1,28 @@
+{
+    "Home": {
+        "lançamentos": "Lançamentos",
+        "vermais": "Ver mais",
+        "episodiosRecentes": "Episódios Recentes",
+        "animesAdicionados": "Animes Adicionados",
+        "filmesAdicionados": "Filmes Adicionados",
+        "assistir": "Assistir agora",
+        "hospedagem": "Hospedagem deste site",
+        "title": "Kandaraku",
+        "direitos": "Todos os direitos reservados.",
+        "copyright": "Copyright",
+        "copyright2": "Kandaraku Studios 2020 - 2024",
+        "espanhol": "🇪🇸 Espanhol",
+        "ingles": "🇬🇧 Inglês",
+        "portugues": "🇧🇷 Português",
+        "sobre": "Uma plataforma da comunidade para acessar informações dos seus animes favoritos, você pode adicionar, editar e publicar.",
+        "footer": {
+            "title": "Kandaraku",
+            "sobre": "Uma plataforma da comunidade para acessar informações dos seus animes favoritos, você pode adicionar, editar e publicar.",
+            "codigo": "Kandaraku Website Project &amp; Kandaraku API Project criado pelo:",
+            "servidor": "Nosso servidor",
+            "fonte": "Código fonte",
+            "parceiros": "Nossos parceiros",
+            "colaboradores": "Nossos colaboradores"
+        }
+    }
+}
