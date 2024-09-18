@@ -36,7 +36,23 @@
             "servidor": "Our server",
             "fonte": "Source code",
             "parceiros": "Our partners",
-            "colaboradores": "Our collaborators"
+            "colaboradores": "Our collaborators",
+            "reportBugTitle": "Report a bug",
+            "reportBugDescription": "If you find any bug, please report to us.",
+            "reportBug": "Report bug",
+            "bugDescriptionLabel": "Describe the bug",
+            "emailLabel": "Username (Optional)",
+            "submitBugReport": "Submit report",
+            "feedbackTitle": "Feedback",
+            "feedbackDescription": "If you have any suggestions, please let us know.",
+            "feedback": "Feedback",
+            "feedbackMessageLabel": "Leave your message",
+            "submitFeedback": "Submit feedback"
         }
+    },
+    "NotFound": {
+        "title": "Page not found",
+        "message": "The page you are looking for does not exist.",
+        "backHome": "Back to home page"
     }
 }

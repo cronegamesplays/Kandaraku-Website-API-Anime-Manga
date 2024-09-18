@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/theme-provider";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 
@@ -33,7 +33,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <body className={cn(inter.className, "min-h-screen bg-background font-sans antialiased")}>
-        <ThemeProvider enableSystem attribute="class" defaultTheme="dark">
+        <ThemeProvider disableTransitionOnChange attribute="class" defaultTheme="dark">
           <NextIntlClientProvider messages={messages} locale={locale}>
             {children}
           </NextIntlClientProvider>

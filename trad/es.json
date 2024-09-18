@@ -36,7 +36,23 @@
             "servidor": "Nuestro servidor",
             "fonte": "Fuente del código",
             "parceiros": "Nuestros parceiros",
-            "colaboradores": "Nuestros colaboradores"
+            "colaboradores": "Nuestros colaboradores",
+            "reportBugTitle": "Reportar un bug",
+            "reportBugDescription": "Si encuentras algún bug, por favor, reporta para nosotros.",
+            "reportBug": "Reportar bug",
+            "bugDescriptionLabel": "Describe el bug",
+            "emailLabel": "Nombre de usuario (Opcional)",
+            "submitBugReport": "Enviar reporte",
+            "feedbackTitle": "Feedback",
+            "feedbackDescription": "Si tienes alguna sugerencia, por favor, déjenos saber.",
+            "feedback": "Feedback",
+            "feedbackMessageLabel": "Deja tu mensaje",
+            "submitFeedback": "Enviar feedback"
         }
+    },
+    "NotFound": {
+        "title": "Página não encontrada",
+        "message": "A página que você está procurando não existe.",
+        "backHome": "Voltar para a página inicial"
     }
 }

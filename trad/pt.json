@@ -25,10 +25,6 @@
         "minhaslista": "Minhas Listas",
         "pesquisarAnime": "Pesquisar Anime",
         "notificacoes": "Notificações",
-        "novoAnime": "Novo Anime",
-        "novoAnimeDesc": "Novo anime adicionado à plataforma.",
-        "ofertaEspecial": "Oferta Especial",
-        "ofertaEspecialDesc": "Oferta especial disponível para você.",
         "atualizacao": "Nova temporada",
         "atualizacaoDesc": "Entramos na temporada de outono, com novos animes e muito mais!",
         "verTodasNotificacoes": "Ver todas as notificações",
@@ -38,9 +34,26 @@
             "sobre": "Uma plataforma da comunidade para acessar informações dos seus animes favoritos, você pode adicionar, editar e publicar.",
             "codigo": "Kandaraku Website Project &amp; Kandaraku API Project criado pelo:",
             "servidor": "Nosso servidor",
+            "links": "Links",
             "fonte": "Código fonte",
             "parceiros": "Nossos parceiros",
-            "colaboradores": "Nossos colaboradores"
+            "colaboradores": "Nossos colaboradores",
+            "reportBugTitle": "Reportar um bug",
+            "reportBugDescription": "Se você encontrar algum bug, por favor, reporte para nós.",
+            "reportBug": "Reportar bug",
+            "bugDescriptionLabel": "Descreva o bug",
+            "emailLabel": "Nome de usuário (Opcional)",
+            "submitBugReport": "Enviar reporte",
+            "feedbackTitle": "Feedback",
+            "feedbackDescription": "Se você tem alguma sugestão, por favor, deixe para nós.",
+            "feedback": "Feedback",
+            "feedbackMessageLabel": "Deixe sua mensagem",
+            "submitFeedback": "Enviar feedback"
         }
+    },
+    "NotFound": {
+        "title": "Página não encontrada",
+        "message": "A página que você está procurando não existe.",
+        "backHome": "Voltar para a página inicial"
     }
 }
