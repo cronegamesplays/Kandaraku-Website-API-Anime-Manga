@@ -21,6 +21,8 @@ export default function PagesLayout({
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [headerSearchTerm, setHeaderSearchTerm] = useState('');
   const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -64,6 +66,14 @@ export default function PagesLayout({
 
   const headerOpacity = Math.min(scrollY / 100, 0.9);
 
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+  const handleHeaderSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setHeaderSearchTerm(e.target.value);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <header 
@@ -73,11 +83,11 @@ export default function PagesLayout({
         <div className="container mx-auto flex justify-between items-center">
           <Link href="/" className="flex items-center text-2xl font-black text-purple-500 hover:scale-105 transition-transform ease-linear duration-75">
             <Image src="/logo.png" alt="Kandaraku" width={32} height={32} className="w-8 h-8 mr-2" />
-            <h1 className="sm:inline">{t('title')}</h1>
+            <h1 className="hidden sm:inline">{t('title')}</h1>
           </Link>
 
           <div className="flex items-center gap-4">
-            <form className="hidden md:flex items-center gap-2 rounded-md border border-input bg-background/30 px-3 py-2">
+            <div className="hidden md:flex items-center gap-2 rounded-md border border-input bg-background/30 px-3 py-2 relative">
               <label htmlFor="search">
                 <Search className="w-4 h-4" />
               </label>
@@ -86,42 +96,61 @@ export default function PagesLayout({
                 className="bg-transparent focus:outline-none w-full min-w-[20ch]"
                 type="text"
                 placeholder={t('pesquisarAnime')}
+                value={headerSearchTerm}
+                onChange={handleHeaderSearchChange}
               />
               <span className="flex items-center gap-1 font-bold text-nowrap">
                 <Command className="w-3 h-3" /> + Q
               </span>
-            </form>
+              {headerSearchTerm && (
+                <div className="absolute left-0 right-0 top-full mt-1 bg-zinc-800 rounded-md shadow-lg">
+                  <div className="p-2">
+                    <p className="text-sm text-zinc-400">Resultados para "{headerSearchTerm}"</p>
+                    <div className="mt-2 space-y-2">
+                      <div className="flex items-center gap-2 p-2 hover:bg-zinc-700 rounded-md">
+                        <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={40} height={40} className="rounded-md" />
+                        <div>
+                          <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute! 2nd Season</p>
+                          <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 p-2 hover:bg-zinc-700 rounded-md">
+                        <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={40} height={40} className="rounded-md" />
+                        <div>
+                          <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute!</p>
+                          <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
 
-            <div className="hidden sm:flex items-center gap-2">
+            <div className="hidden md:flex items-center gap-2">
               <LangButton />
               <NotificationPopover t={t} />
               <UserPopover t={t} />
             </div>
 
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="sm:hidden p-2"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            <div className="md:hidden flex items-center gap-2">
+              <LangButton />
+              <div className="flex items-center gap-2 rounded-md border border-input bg-background/30 px-3 py-2">
+                <Search className="w-4 h-4" onClick={() => setIsSearchOpen(true)} />
+              </div>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2"
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
 
         {isMenuOpen && (
-          <div className="sm:hidden mt-4 space-y-4">
-            <form className="flex items-center gap-2 rounded-md border border-input bg-background/30 px-3 py-2">
-              <label htmlFor="mobile-search">
-                <Search className="w-4 h-4" />
-              </label>
-              <input
-                id="mobile-search"
-                className="bg-transparent focus:outline-none w-full"
-                type="text"
-                placeholder={t('pesquisarAnime')}
-              />
-            </form>
-            <LangButton />
+          <div className="md:hidden mt-4 space-y-4">
             <NotificationPopover t={t} />
             <UserPopover t={t} />
           </div>
@@ -151,6 +180,8 @@ export default function PagesLayout({
                 className="bg-transparent focus:outline-none text-white text-xl w-full"
                 type="text"
                 placeholder={t('pesquisarAnime')}
+                value={searchTerm}
+                onChange={handleSearchChange}
               />
             </form>
             <button
@@ -159,6 +190,27 @@ export default function PagesLayout({
             >
               <X className="w-6 h-6" />
             </button>
+            {searchTerm && (
+              <div className="mt-4">
+                <p className="text-sm text-zinc-400 mb-2">Resultados para "{searchTerm}"</p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 p-2 hover:bg-zinc-800 rounded-md">
+                    <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={50} height={50} className="rounded-md" />
+                    <div>
+                      <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute! 2nd Season</p>
+                      <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2 p-2 hover:bg-zinc-800 rounded-md">
+                    <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={50} height={50} className="rounded-md" />
+                    <div>
+                      <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute!</p>
+                      <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}
@@ -170,8 +222,9 @@ function NotificationPopover({ t }: { t: (key: string) => string }) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="inline-flex items-center gap-2 px-3">
+        <Button variant="outline" className="inline-flex items-center gap-2 px-3 md:w-auto w-full justify-start">
           <Bell className="w-5 h-5" />
+          <span className="md:hidden">{t('notificacoes')}</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 bg-zinc-900 border border-zinc-800 p-4 rounded-lg shadow-lg">
@@ -197,8 +250,9 @@ function UserPopover({ t }: { t: (key: string) => string }) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="inline-flex items-center gap-2 px-3">
+        <Button variant="outline" className="inline-flex items-center gap-2 px-3 md:w-auto w-full justify-start">
           <User className="w-5 h-5" />
+          <span className="md:hidden">{t('perfil')}</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-64 bg-zinc-900 border border-zinc-800 p-4 rounded-lg shadow-lg">

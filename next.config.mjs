@@ -14,6 +14,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "media.discordapp.net",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.myanimelist.net",
+      },
     ],
   },
 };
