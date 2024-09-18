@@ -1,3 +1,5 @@
+'use client'
+
 import AnimeCard from "@/components/anime-card";
 import AnimeCarousel from "@/components/anime-carousel";
 import HomepageCarousel from "@/components/homepage-carousel";
@@ -11,14 +13,14 @@ export default function Home() {
   return (
     <>
       <HomepageCarousel />
-      <div className="space-y-24 mb-24 mt-24">
+      <div className="space-y-16 sm:space-y-24 mb-16 sm:mb-24 mt-16 sm:mt-24">
         <section>
           <SectionTitle
             title={t('lançamentos')}
-            icon={<Tv className="sm:size-10" />}
+            icon={<Tv className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />}
             seeMoreLink="#"
           />
-          <div className="mt-6">
+          <div className="mt-4 sm:mt-6">
             <AnimeCarousel
               animeCards={Array.from({ length: 10 }).map((_, key) => (
                 <AnimeCard
@@ -37,10 +39,10 @@ export default function Home() {
         <section>
           <SectionTitle
             title={t('episodiosRecentes')}
-            icon={<PlayCircle className="sm:size-10" />}
+            icon={<PlayCircle className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />}
             seeMoreLink="#"
           />
-          <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="mt-4 sm:mt-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
             {Array.from({ length: 16 }).map((_, key) => (
               <AnimeCard
                 key={key}
@@ -57,10 +59,10 @@ export default function Home() {
         <section>
           <SectionTitle
             title={t('animesAdicionados')}
-            icon={<DiamondPlus className="sm:size-10" />}
+            icon={<DiamondPlus className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />}
             seeMoreLink="#"
           />
-          <div className="mt-6">
+          <div className="mt-4 sm:mt-6">
             <AnimeCarousel
               animeCards={Array.from({ length: 10 }).map((_, key) => (
                 <AnimeCard
@@ -79,10 +81,10 @@ export default function Home() {
         <section>
           <SectionTitle
             title={t('filmesAdicionados')}
-            icon={<Clapperboard className="sm:size-10" />}
+            icon={<Clapperboard className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10" />}
             seeMoreLink="#"
           />
-          <div className="mt-6">
+          <div className="mt-4 sm:mt-6">
             <AnimeCarousel
               animeCards={Array.from({ length: 10 }).map((_, key) => (
                 <AnimeCard

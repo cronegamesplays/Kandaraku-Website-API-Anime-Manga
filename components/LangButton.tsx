@@ -25,7 +25,7 @@ export default function LangButton() {
     return (
         <Popover>
             <PopoverTrigger asChild>
-                <Button variant="secondary" size="icon" className="p-2" aria-label={t('changeLanguage')}>
+                <Button variant="secondary" size="icon" className="p-2" aria-label="Mudar idioma">
                     <Languages className="size-6" />
                 </Button>
             </PopoverTrigger>

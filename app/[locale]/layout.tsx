@@ -4,6 +4,7 @@ import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "next-themes";
 import { NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,18 +16,25 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   params: {locale},
 }: Readonly<{
   children: React.ReactNode;
   params: {locale: string};
 }>) {
+  let messages;
+  try {
+    messages = (await import(`../../trad/${locale}.json`)).default;
+  } catch (error) {
+    notFound();
+  }
+
   return (
-    <html lang="pt-br">
+    <html lang={locale}>
       <body className={cn(inter.className, "min-h-screen bg-background font-sans antialiased")}>
         <ThemeProvider enableSystem attribute="class" defaultTheme="dark">
-          <NextIntlClientProvider locale={locale}>
+          <NextIntlClientProvider messages={messages} locale={locale}>
             {children}
           </NextIntlClientProvider>
         </ThemeProvider>

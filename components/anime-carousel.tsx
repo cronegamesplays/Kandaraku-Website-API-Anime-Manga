@@ -51,12 +51,10 @@ export default function AnimeCarousel(props: {
     <>
       <Carousel setApi={setApi} className="overflow-x-hidden">
         <CarouselContent className="gap-3 sm:gap-6">
-          {props.animeCards.map((card, key) => (
-            <>
-              <CarouselItem key={key} className="min-w-fit my-1">
-                {card}
-              </CarouselItem>
-            </>
+          {props.animeCards.map((card, index) => (
+            <CarouselItem key={index} className="min-w-fit my-1">
+              {card}
+            </CarouselItem>
           ))}
         </CarouselContent>
         <div className="mt-3 sm:mt-5 flex gap-3 max-w-md mx-auto">
