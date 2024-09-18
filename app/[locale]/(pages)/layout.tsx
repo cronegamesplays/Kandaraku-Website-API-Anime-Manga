@@ -135,9 +135,6 @@ export default function PagesLayout({
 
             <div className="md:hidden flex items-center gap-2">
               <LangButton />
-              <div className="flex items-center gap-2 rounded-md border border-input bg-background/30 px-3 py-2">
-                <Search className="w-4 h-4" onClick={() => setIsSearchOpen(true)} />
-              </div>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className="p-2"
@@ -151,8 +148,43 @@ export default function PagesLayout({
 
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4">
-            <NotificationPopover t={t} />
-            <UserPopover t={t} />
+            <div className="flex items-center gap-2 rounded-md border border-input bg-background/30 px-3 py-2 relative">
+              <Search className="w-4 h-4" />
+              <input
+                className="bg-transparent focus:outline-none w-full"
+                type="text"
+                placeholder={t('pesquisarAnime')}
+                value={headerSearchTerm}
+                onChange={handleHeaderSearchChange}
+              />
+            </div>
+            {headerSearchTerm && (
+              <div className="bg-zinc-800 rounded-md shadow-lg">
+                <div className="p-2">
+                  <p className="text-sm text-zinc-400">Resultados para "{headerSearchTerm}"</p>
+                  <div className="mt-2 space-y-2">
+                    <div className="flex items-center gap-2 p-2 hover:bg-zinc-700 rounded-md">
+                      <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={40} height={40} className="rounded-md" />
+                      <div>
+                        <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute! 2nd Season</p>
+                        <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 p-2 hover:bg-zinc-700 rounded-md">
+                      <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={40} height={40} className="rounded-md" />
+                      <div>
+                        <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute!</p>
+                        <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+            <div className="flex justify-around">
+              <NotificationPopover t={t} />
+              <UserPopover t={t} />
+            </div>
           </div>
         )}
       </header>
@@ -222,9 +254,8 @@ function NotificationPopover({ t }: { t: (key: string) => string }) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="inline-flex items-center gap-2 px-3 md:w-auto w-full justify-start">
+        <Button variant="outline" className="p-2 md:px-3 md:w-auto w-full justify-center md:justify-start">
           <Bell className="w-5 h-5" />
-          <span className="md:hidden">{t('notificacoes')}</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-80 bg-zinc-900 border border-zinc-800 p-4 rounded-lg shadow-lg">
@@ -250,9 +281,8 @@ function UserPopover({ t }: { t: (key: string) => string }) {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant="outline" className="inline-flex items-center gap-2 px-3 md:w-auto w-full justify-start">
+        <Button variant="outline" className="p-2 md:px-3 md:w-auto w-full justify-center md:justify-start">
           <User className="w-5 h-5" />
-          <span className="md:hidden">{t('perfil')}</span>
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-64 bg-zinc-900 border border-zinc-800 p-4 rounded-lg shadow-lg">
