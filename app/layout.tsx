@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 import { cn } from "@/lib/utils";
-import { ThemeProvider } from "next-themes";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={cn(inter.className, "min-h-screen bg-background font-sans antialiased")}>
-        <ThemeProvider enableSystem attribute="class" defaultTheme="dark">
+        <ThemeProvider disableTransitionOnChange attribute="class" defaultTheme="dark">
           {children}
         </ThemeProvider>
       </body>
