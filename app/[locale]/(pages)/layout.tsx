@@ -10,6 +10,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/ui/popover"
 import { Avatar, AvatarImage, AvatarFallback} from "@/ui/avatar";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import { usePathname } from 'next/navigation';
 
 export default function PagesLayout({
   children,
@@ -24,6 +25,9 @@ export default function PagesLayout({
   const [searchTerm, setSearchTerm] = useState('');
   const [headerSearchTerm, setHeaderSearchTerm] = useState('');
   const searchRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  const isHomePage = pathname === '/pt' || pathname === '/en' || pathname === '/es';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,6 +77,10 @@ export default function PagesLayout({
   const handleHeaderSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setHeaderSearchTerm(e.target.value);
   };
+
+  if (!isHomePage) {
+    return <div className="flex flex-col min-h-screen">{children}</div>;
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
