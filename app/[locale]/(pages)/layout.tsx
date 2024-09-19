@@ -1,13 +1,13 @@
 'use client'
 
 import { Button } from "@/ui/button";
-import { Command, Search, User, List, Settings, LogOut, Heart, BellRing, Megaphone, Gift, Bell, Leaf, LayoutDashboard, Menu, X } from "lucide-react";
+import { Command, Search, User, List, Settings, LogOut, Heart, BellRing, Megaphone, Gift, Bell, Leaf, LayoutDashboard, Menu, X, Filter, SlidersHorizontal } from "lucide-react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { ReactNode, useState, useEffect, useCallback, useRef } from "react";
 import LangButton from "@/components/LangButton";
 import { Popover, PopoverContent, PopoverTrigger } from "@/ui/popover"
-import { Avatar, AvatarImage, AvatarFallback } from "@/ui/avatar";
+import { Avatar, AvatarImage, AvatarFallback} from "@/ui/avatar";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 
@@ -38,7 +38,7 @@ export default function PagesLayout({
   }, []);
 
   const handleKeyDown = useCallback((event: KeyboardEvent) => {
-    if (event.key === 'q' && (event.metaKey || event.ctrlKey)) {
+    if ((event.key === 'q' && (event.metaKey || event.ctrlKey)) || (event.key === 'Q' && event.ctrlKey)) {
       event.preventDefault();
       setIsSearchOpen(prev => !prev);
     }
@@ -103,7 +103,7 @@ export default function PagesLayout({
                 <Command className="w-3 h-3" /> + Q
               </span>
               {headerSearchTerm && (
-                <div className="absolute left-0 right-0 top-full mt-1 bg-zinc-800 rounded-md shadow-lg">
+                <div className="absolute left-0 right-0 top-full mt-3 bg-zinc-800 rounded-md shadow-lg">
                   <div className="p-2">
                     <p className="text-sm text-zinc-400">Resultados para "{headerSearchTerm}"</p>
                     <div className="mt-2 space-y-2">
@@ -135,52 +135,22 @@ export default function PagesLayout({
 
             <div className="md:hidden flex items-center gap-2">
               <LangButton />
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
+              <Button variant="outline" className="p-2" onClick={() => setIsSearchOpen(true)}>
+                <Search className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="outline"
                 className="p-2"
-                aria-label="Toggle menu"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
+                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              </Button>
             </div>
           </div>
         </div>
 
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4">
-            <div className="flex items-center gap-2 rounded-md border border-input bg-background/30 px-3 py-2 relative">
-              <Search className="w-4 h-4" />
-              <input
-                className="bg-transparent focus:outline-none w-full"
-                type="text"
-                placeholder={t('pesquisarAnime')}
-                value={headerSearchTerm}
-                onChange={handleHeaderSearchChange}
-              />
-            </div>
-            {headerSearchTerm && (
-              <div className="bg-zinc-800 rounded-md shadow-lg">
-                <div className="p-2">
-                  <p className="text-sm text-zinc-400">Resultados para "{headerSearchTerm}"</p>
-                  <div className="mt-2 space-y-2">
-                    <div className="flex items-center gap-2 p-2 hover:bg-zinc-700 rounded-md">
-                      <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={40} height={40} className="rounded-md" />
-                      <div>
-                        <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute! 2nd Season</p>
-                        <p className="text-sm text-zinc-400">Ação, Fantasia</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 p-2 hover:bg-zinc-700 rounded-md">
-                      <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={40} height={40} className="rounded-md" />
-                      <div>
-                        <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute!</p>
-                        <p className="text-sm text-zinc-400">Ação, Fantasia</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
             <div className="flex justify-around">
               <NotificationPopover t={t} />
               <UserPopover t={t} />
@@ -203,19 +173,24 @@ export default function PagesLayout({
         </div>
       </footer>
       {isSearchOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
           <div ref={searchRef} className="bg-zinc-900 p-6 rounded-lg w-full max-w-2xl">
-            <form className="flex items-center gap-2">
-              <Search className="w-6 h-6 text-zinc-400" />
-              <input
-                autoFocus
-                className="bg-transparent focus:outline-none text-white text-xl w-full"
-                type="text"
-                placeholder={t('pesquisarAnime')}
-                value={searchTerm}
-                onChange={handleSearchChange}
-              />
-            </form>
+            <div className="flex items-center justify-between mb-6">
+              <form className="flex items-center gap-2 flex-grow">
+                <Search className="w-6 h-6 text-zinc-400" />
+                <input
+                  autoFocus
+                  className="bg-transparent focus:outline-none text-white text-xl w-full"
+                  type="text"
+                  placeholder={t('pesquisarAnime')}
+                  value={searchTerm}
+                  onChange={handleSearchChange}
+                />
+              </form>
+              <Button className="ml-2 border border-zinc-800">
+                <SlidersHorizontal className="w-5 h-5" />
+              </Button>
+            </div>
             <button
               className="absolute top-4 right-4 text-zinc-400 hover:text-white"
               onClick={() => setIsSearchOpen(false)}
@@ -225,19 +200,35 @@ export default function PagesLayout({
             {searchTerm && (
               <div className="mt-4">
                 <p className="text-sm text-zinc-400 mb-2">Resultados para "{searchTerm}"</p>
-                <div className="space-y-2">
-                  <div className="flex items-center gap-2 p-2 hover:bg-zinc-800 rounded-md">
-                    <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={50} height={50} className="rounded-md" />
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4 p-3 hover:bg-zinc-800 rounded-md cursor-pointer">
+                    <Image src="https://cdn.myanimelist.net/images/anime/1812/134736.jpg" alt="Anime" width={80} height={120} className="rounded-md object-cover" />
                     <div>
-                      <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute! 2nd Season</p>
-                      <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                      <p className="font-semibold text-lg">Oshi no Ko</p>
+                      <div className="flex items-center gap-2 mt-1 mb-2">
+                        <Avatar className="w-5 h-5">
+                          <AvatarImage src="https://github.com/shadcn.png" alt="Avatar do usuário" />
+                          <AvatarFallback>KA</AvatarFallback>
+                        </Avatar>
+                        <span className="text-sm text-zinc-400 underline underline-offset-4">Kandaraku</span>
+                      </div>
+                      <p className="text-sm text-zinc-400">Ação, Romance, Sobrenatural</p>
+                      <p className="text-sm text-zinc-400">Temporadas: 2 Seasons</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 p-2 hover:bg-zinc-800 rounded-md">
-                    <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={50} height={50} className="rounded-md" />
+                  <div className="flex items-start gap-4 p-3 hover:bg-zinc-800 rounded-md cursor-pointer">
+                    <Image src="https://cdn.myanimelist.net/images/anime/1874/121869.jpg" alt="Anime" width={80} height={120} className="rounded-md object-cover" />
                     <div>
-                      <p className="font-semibold">Kage no Jitsuryokusha ni Naritakute!</p>
+                      <p className="font-semibold text-lg">Kage no Jitsuryokusha ni Naritakute!</p>
+                      <div className="flex items-center gap-2 mt-1 mb-2">
+                        <Avatar className="w-5 h-5">
+                          <AvatarImage src="https://github.com/shadcn.png" alt="Avatar do usuário" />
+                          <AvatarFallback>KA</AvatarFallback>
+                        </Avatar>
+                        <span className="text-sm text-zinc-400 underline underline-offset-4">Kandaraku</span>
+                      </div>
                       <p className="text-sm text-zinc-400">Ação, Fantasia</p>
+                      <p className="text-sm text-zinc-400">Temporadas: 1 Season</p>
                     </div>
                   </div>
                 </div>
