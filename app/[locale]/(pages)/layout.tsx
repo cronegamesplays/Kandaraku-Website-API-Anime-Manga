@@ -19,7 +19,6 @@ export default function PagesLayout({
 }) {
   const t = useTranslations('Home');
   const f = useTranslations('Home.footer');
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
@@ -146,25 +145,11 @@ export default function PagesLayout({
               <Button variant="outline" className="p-2" onClick={() => setIsSearchOpen(true)}>
                 <Search className="w-5 h-5" />
               </Button>
-              <Button
-                variant="outline"
-                className="p-2"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </Button>
-            </div>
-          </div>
-        </div>
-
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 space-y-4">
-            <div className="flex justify-around">
               <NotificationPopover t={t} />
               <UserPopover t={t} />
             </div>
           </div>
-        )}
+        </div>
       </header>
       <main className="flex-grow">
         <div className="container mx-auto p-5">
