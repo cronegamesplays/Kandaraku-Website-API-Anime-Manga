@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Lock, Mail } from "lucide-react";
 import { Discord } from "react-bootstrap-icons";
+import LangButton from "@/components/LangButton";
 
 const LoginPage = () => {
   const [dateTime, setDateTime] = useState<Date | null>(null);
@@ -34,9 +35,13 @@ const LoginPage = () => {
 
   return (
     <div
-      className="min-h-screen flex flex-col md:flex-row justify-between items-center bg-cover bg-center"
+      className="min-h-screen flex flex-col md:flex-row justify-between items-center bg-cover bg-center relative"
       style={{ backgroundImage: 'url("/bg-login.png")' }}
     >
+      <div className="absolute top-5 left-5">
+        <LangButton />
+      </div>
+
       <div className="md:w-1/2 flex flex-col items-center justify-center text-white mt-16 p-6 md:p-10">
         <h1 className="text-4xl md:text-5xl font-bold text-center">
           Bem vindo(a) ao <br />
@@ -47,7 +52,8 @@ const LoginPage = () => {
           você precisa ter uma conta registrada.
         </p>
         {dateTime && (
-          <div className="mt-6 text-lg md:text-xl text-center">
+          <div className="mt-6 text-lg md:text-xl text-center md:hidden">
+            {/* Exibe o relógio normalmente em telas menores */}
             <p className="text-4xl md:text-5xl font-bold">{formatTime(dateTime)}</p>
             <p>{formatDate(dateTime)}</p>
           </div>
@@ -57,7 +63,9 @@ const LoginPage = () => {
         <div className="bg-neutral-800 text-white rounded-lg shadow-lg p-6 md:p-8 w-full">
           <div className="flex items-center justify-center">
             <img src="/logo.png" alt="Kandaraku" width={32} height={32} className="w-8 h-8 mr-2" />
-            <h2 className="text-2xl md:text-3xl font-bold text-center text-purple-500">Kandaraku</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-center text-purple-500">
+              Kandaraku
+            </h2>
           </div>
           <h3 className="text-lg md:text-xl font-medium text-center mb-4 md:mb-6">Fazer login</h3>
           <form>
@@ -121,6 +129,14 @@ const LoginPage = () => {
           </footer>
         </div>
       </div>
+
+      {/* Relógio fixo no rodapé para telas maiores */}
+      {dateTime && (
+        <div className="hidden md:flex fixed bottom-8 left-8 text-xl text-white flex-col">
+          <p className="text-5xl font-bold">{formatTime(dateTime)}</p>
+          <p>{formatDate(dateTime)}</p>
+        </div>
+      )}
     </div>
   );
 };
