@@ -33,7 +33,7 @@ export default function Footer({ f, t }: { f: (key: string) => string, t: (key: 
       <footer className="relative bg-gradient-to-b from-zinc-900/90 to-black text-zinc-300 py-12 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <div className="absolute inset-0 w-full h-full">
           <Image
-            src="https://media.discordapp.net/attachments/1048875201628229632/1285805782750728302/images_17.jpg?ex=66eb9b73&is=66ea49f3&hm=792fec5b867d3f6e9bc7a55b0779fc500edaaf4d983bdc772bba0b10901833cc&=&format=webp"
+            src="/footer-background.png"
             alt="Footer Background"
             layout="fill"
             objectFit="cover"
@@ -50,7 +50,7 @@ export default function Footer({ f, t }: { f: (key: string) => string, t: (key: 
               </h2>
               <p className="text-sm leading-relaxed">{f('sobre')}</p>
               <small className="block text-xs text-zinc-400">
-                {f('codigo')} <a href="https://github.com/cronegamesplays" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-100 transition-colors duration-300">@CronesGamesPlays</a>
+                {f('codigo')} <a href="https://github.com/cronegamesplays" target="_blank" rel="noopener noreferrer" className="underline hover:text-zinc-100 transition-colors duration-300">@CroneGamesPlays</a>
               </small>
             </div>
             
