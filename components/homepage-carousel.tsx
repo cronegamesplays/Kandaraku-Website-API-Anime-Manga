@@ -48,6 +48,23 @@ export default function HomepageCarousel() {
       rank: 230,
       rate: 4.9,
     },
+    {
+      authorName: "Yugi",
+      authorProfileLink: "#",
+      animeTitle: "Oshi no Ko",
+      animeDescription: "Aqua desire for revenge takes center stage as he navigates the dark underbelly of the entertainment world alongside his twin sister, Ruby. While Ruby follows in their slain mother’s footsteps to become an idol, Aqua joins a famous theater troupe in hopes of uncovering clues to the identity of his father — the man who arranged their mother’s untimely death, and the man who once starred in the same troupe Aqua hopes to infiltrate.",
+      animeImageLink: "https://s4.anilist.co/file/anilistcdn/media/anime/banner/166531-vUu7iDwUkC67.jpg",
+      animeStudioName: "Doga Kobo",
+      animeEpisodeDuration: 1440000,
+      createdAt: new Date(),
+      animeLink: "#",
+      animeDubCount: 2,
+      animeSubCount: 14,
+      likes: 1900,
+      views: 50000,
+      rank: 230,
+      rate: 4.9,
+    },
   ];
 
   return (
